@@ -13,7 +13,6 @@ public class CheckAppAuthRequest extends BaseRequest {
      */
     private String appCode;
 
-
     public CheckAppAuthRequest() {
     }
 

@@ -16,17 +16,16 @@ public class BaseRequest implements Serializable {
     private String traceId;
 
     /**
-     *
      * accountInfo 用户传递用户信息
      */
     private String accountInfo;
 
     /**
      * 要路由的reigonId
+     *
      * @return
      */
     private String region;
-
 
     public String getTraceId() {
         return traceId;
