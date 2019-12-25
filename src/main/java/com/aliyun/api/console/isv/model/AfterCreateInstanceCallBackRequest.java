@@ -22,6 +22,9 @@ public class AfterCreateInstanceCallBackRequest extends CallBackBaseRequest {
 
     // 过期时间(yyyy-MM-dd HH:mm:ss)
     private Date expiredOn;
+    
+    // 是否是试用
+	private Boolean trial;
 
     /**
      * @return the orderId
@@ -92,4 +95,18 @@ public class AfterCreateInstanceCallBackRequest extends CallBackBaseRequest {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+    
+    /**
+	 * @return the trial
+	 */
+	public Boolean getTrial() {
+		return trial;
+	}
+
+	/**
+	 * @param trial the trial to set
+	 */
+	public void setTrial(Boolean trial) {
+		this.trial = trial;
+	}
 }
