@@ -12,11 +12,21 @@ public class CallBackBaseRequest extends BaseRequest {
      * 用户中心商品唯一识别码
      */
     private String appCode;
+    
+    /**
+     * 用户中心商品唯一识别码 alias
+     */
+    private String appAliasCode;
 
     /**
      * 用户中心isv唯一识别码
      */
     private String isvCode;
+    
+    /**
+     * 挂载的小程序id
+     */
+    private String miniAppId;
 
     // 1.partner：BID帐号 2. customer：云账号 3. sub：RAM子用户 4. AssumedRoleUser：STS Token临时身份
     private String callerType;
@@ -91,4 +101,20 @@ public class CallBackBaseRequest extends BaseRequest {
     public void setRoleName(String roleName) {
         this.roleName = roleName;
     }
+    
+	public String getAppAliasCode() {
+		return appAliasCode;
+	}
+
+	public void setAppAliasCode(String appAliasCode) {
+		this.appAliasCode = appAliasCode;
+	}
+    
+	public String getMiniAppId() {
+		return miniAppId;
+	}
+
+	public void setMiniAppId(String miniAppId) {
+		this.miniAppId = miniAppId;
+	}
 }
