@@ -1,5 +1,7 @@
 package com.aliyun.api.console.isv.model;
 
+import com.alibaba.fastjson.annotation.JSONField;
+
 import java.util.Date;
 
 public class AfterRenewInstanceCallBackRequest extends CallBackBaseRequest {
@@ -15,6 +17,7 @@ public class AfterRenewInstanceCallBackRequest extends CallBackBaseRequest {
     private String orderId;
 
     // 过期时间（yyyy-MM-dd HH:mm:ss）
+    @JSONField(format="yyyy-MM-dd HH:mm:ss.SSS")
     private Date expiredOn;
 
     /**

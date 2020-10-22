@@ -9,7 +9,7 @@
   <modelVersion>4.0.0</modelVersion>  
   <groupId>com.aliyun.shared</groupId>  
   <artifactId>cp-nconsole-isv-lifecycle</artifactId>
-  <version>1.0.1</version>
+  <version>1.0.2</version>
   <!-- 0.0.3-SNAPSHOT -->  
   <packaging>jar</packaging>  
   <name>cp.nconsole.common.api</name>  
@@ -20,13 +20,18 @@
     <javac_target>1.8</javac_target> 
   </properties>  
   <dependencies>
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>fastjson</artifactId>
+      <version>1.2.68.noneautotype</version>
+    </dependency>
   </dependencies>  
   <build> 
     <plugins> 
       <plugin> 
         <artifactId>maven-dependency-plugin</artifactId>  
         <version>2.8</version> 
-      </plugin>  
+      </plugin>
       <plugin> 
         <groupId>org.apache.maven.plugins</groupId>  
         <artifactId>maven-surefire-plugin</artifactId>  
