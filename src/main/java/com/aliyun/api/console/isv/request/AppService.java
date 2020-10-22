@@ -19,16 +19,6 @@ public interface AppService {
     public BaseResponse afterCreateInstance(AfterCreateInstanceCallBackRequest request);
 
     /**
-     * 会在前端主动发起调用 checkApplicationAlreadyInit 以检查当前用户是否已经初始化 如果接口返回当前用户未初始化则调用 initApplication 触发初始化任务 然后每隔 5s
-     * 调用checkApplicationInitStatus 60次后失败，提醒用户重试 并重新触发 initApplication接口 然后再调用 checkApplicationInitStatus 直到成功
-     */
-    public BaseResponse checkApplicationAlreadyInit(CallBackBaseRequest request);
-
-    public BaseResponse initApplication(CallBackBaseRequest request);
-
-    public BaseResponse checkApplicationInitStatus(CallBackBaseRequest request);
-
-    /**
      * 实例续费回调
      * <p>
      * 通过云市场售卖的商品，在用户续费时，由云市场主动发起调用 随后开始通过 afterRenewInstance 轮训实例续费状态，成功后轮训结束！ 超过120次调用如果最终失败，由 ISV 在云市场后台重置生产消息通知
