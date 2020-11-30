@@ -27,6 +27,13 @@ public class BaseRequest implements Serializable {
      */
     private String region;
 
+
+    /**
+     * 云市场所有的回调参数
+     */
+    private String marketRequestParametersString;
+
+
     public String getTraceId() {
         return traceId;
     }
@@ -49,5 +56,13 @@ public class BaseRequest implements Serializable {
 
     public void setRegion(String region) {
         this.region = region;
+    }
+
+    public String getMarketRequestParametersString() {
+        return marketRequestParametersString;
+    }
+
+    public void setMarketRequestParametersString(String marketRequestParametersString) {
+        this.marketRequestParametersString = marketRequestParametersString;
     }
 }
