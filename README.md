@@ -1,6 +1,6 @@
 ### 背景
-+ 当前代码是阿里云企业工作台为第三方合作伙伴提供的，基于深度集成的合作模式的三方库
-+ 本三方库提供了对三方插件在售卖完整生命周期（包含新购、变配、续费、退款、释放，服务启停）的回调函数
++ 当前代码是阿里云企业工作台为第三方合作伙伴提供的 SDK， 目前 SDK 仅提供 [JAVA](javadoc/com/aliyun/api/console/isv/request/AppService.html)  版本。 如果您使用其他语言进行集成请查看 [HTTP API](README_HTTP.md)
++ 阿里云企业工作台提供了对三方插件在售卖完整生命周期（包含新购、变配、续费、退款、释放，服务启停）的回调函数
 
 ### 时序图
 + 新购
@@ -25,4 +25,5 @@
  ![](http://gw.alicdn.com/mt/TB1TZW7rHj1gK0jSZFuXXcrHpXa-1290-950.png)    
   
 ### 文档 
-+ [javadoc](javadoc/index.html)
++ [java sdk](javadoc/com/aliyun/api/console/isv/request/AppService.html) 
++ [http api](README_HTTP.md)
