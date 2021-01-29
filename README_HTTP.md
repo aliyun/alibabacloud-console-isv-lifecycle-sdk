@@ -101,6 +101,9 @@ GET
 > https://aliwork.test.cn/buy/afterCreateInstance?callerParentId=1111111111111111&traceId=0b0eccd016118678703871654ef4ba&orderId=222222222222222&appCode=cmgj00053252&expiredOn=2021-04-29+00%3A00%3A00.000&trial=true&instanceId=33884913&isvCode=UZiFMY8b&productCode=cmgj00053252&marketRequestParametersString=%7B%22productCode%22%3A%22cmgj00053252%22%2C%22package_version%22%3A%22yuncode3621600001%22%2C%22orderId%22%3A%22222222222222222%22%2C%22orderBizId%22%3A%2233884913%22%2C%22action%22%3A%22createInstance%22%2C%22aliUid%22%3A%221111111111111111%22%2C%22expiredOn%22%3A%222021-04-29+00%3A00%3A00%22%2C%22skuId%22%3A%22yuncode3621600001%22%2C%22trial%22%3A%22true%22%2C%22token%22%3A%22ddc1b006263a33cb65a5f1139cac2d2c%22%7D&callerType=2&appAliasCode=easycmdb&callerUid=1111111111111111&skuId=yuncode3621600001
 
 #### 验签方式
+企业工作台会将云市场的回调参数完整透传，放在调用的 marketRequestParametersString 中格式为 json.
+
+ISV 需要按照 [云市场安全验证方案](https://help.aliyun.com/document_detail/147280.html?spm=a2c4g.11186623.6.634.4f7f24c5Yawhq6)  中的方式将参数排序后 md5 .  并将结果与原始参数中的token 做比对.
 示例中密钥为: 29ae1790-c00c-4321-a214-254fe79e2269
 
 加密后的token为: ddc1b006263a33cb65a5f1139cac2d2c
