@@ -102,6 +102,7 @@ GET
 
 #### 验签方式
 示例中密钥为: 29ae1790-c00c-4321-a214-254fe79e2269
+
 加密后的token为: ddc1b006263a33cb65a5f1139cac2d2c
 ##### 签名代码(java)
     private static String md5(String s) {
