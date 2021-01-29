@@ -98,4 +98,31 @@ GET
 
 
 ### 调用示例
-> http://buy.testIsv.com/api(buy)/beforeCreateInstance?callerParentId=1894497888569338&traceId=0bb61bca16027295143026356e0383&orderId=207179164200506&appCode=cmgj00042216&expiredOn=2021-01-14+00%3A00%3A00.000&trial=true&instanceId=30536499&isvCode=UZiFMY8b&productCode=cmgj00042216&marketRequestParametersString=%7B%22productCode%22%3A%22cmgj00042216%22%2C%22package_version%22%3A%yuncode3622600001%22%2C%22orderId%22%3A%22207179164200506%22%2C%22orderBizId%22%3A%2230536499%22%2C%22action%22%3A%22createInstance%22%2C%22aliUid%22%3A%221894497888469338%22%2C%22expiredOn%22%3A%222021-01-14+00%3A00%3A00%22%2C%22skuId%22%3A%22yuncode3621600001%22%2C%22trial%22%3A%22true%22%2C%22token%22%3A%226d8eb7ced46179aaac6af5e1fdde952f%22%7D&callerType=2&appAliasCode=easycmdb&callerUid=1894497888569338&skuId=yuncode3622600001
+> https://aliwork.test.cn/buy/afterCreateInstance?callerParentId=1111111111111111&traceId=0b0eccd016118678703871654ef4ba&orderId=222222222222222&appCode=cmgj00053252&expiredOn=2021-04-29+00%3A00%3A00.000&trial=true&instanceId=33884913&isvCode=UZiFMY8b&productCode=cmgj00053252&marketRequestParametersString=%7B%22productCode%22%3A%22cmgj00053252%22%2C%22package_version%22%3A%22yuncode3621600001%22%2C%22orderId%22%3A%22222222222222222%22%2C%22orderBizId%22%3A%2233884913%22%2C%22action%22%3A%22createInstance%22%2C%22aliUid%22%3A%221111111111111111%22%2C%22expiredOn%22%3A%222021-04-29+00%3A00%3A00%22%2C%22skuId%22%3A%22yuncode3621600001%22%2C%22trial%22%3A%22true%22%2C%22token%22%3A%22ddc1b006263a33cb65a5f1139cac2d2c%22%7D&callerType=2&appAliasCode=easycmdb&callerUid=1111111111111111&skuId=yuncode3621600001
+
+#### 验签方式
+示例中密钥为: 29ae1790-c00c-4321-a214-254fe79e2269
+加密后的token为: ddc1b006263a33cb65a5f1139cac2d2c
+##### 签名代码(java)
+    private static String md5(String s) {
+        try {
+            MessageDigest DIGESTER = MessageDigest.getInstance("MD5");
+            byte[] digest = DIGESTER.digest(s.getBytes());
+            return bytesToString(digest);
+        } catch (NoSuchAlgorithmException e) {
+        }
+        return null;
+    }
+
+
+    private static String bytesToString(byte[] data) {
+        char hexDigits[] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd',
+            'e', 'f'};
+        char[] temp = new char[data.length * 2];
+        for (int i = 0; i < data.length; i++) {
+            byte b = data[i];
+            temp[i * 2] = hexDigits[b >>> 4 & 0x0f];
+            temp[i * 2 + 1] = hexDigits[b & 0x0f];
+        }
+        return new String(temp);
+    }
