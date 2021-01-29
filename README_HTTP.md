@@ -104,6 +104,7 @@ GET
 企业工作台会将云市场的回调参数完整透传，放在调用的 marketRequestParametersString 中格式为 json.
 
 ISV 需要按照 [云市场安全验证方案](https://help.aliyun.com/document_detail/147280.html?spm=a2c4g.11186623.6.634.4f7f24c5Yawhq6)  中的方式将参数排序后 md5 .  并将结果与原始参数中的token 做比对.
+
 示例中密钥为: 29ae1790-c00c-4321-a214-254fe79e2269
 
 加密后的token为: ddc1b006263a33cb65a5f1139cac2d2c
